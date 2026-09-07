@@ -41,5 +41,18 @@
     </form>
 
     <div id="resultado"></div>
+        <script>
+        document.getElementById('form-emprestimo').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const valor = parseFloat(document.getElementById('valor').value);
+            const parcelas = parseInt(document.getElementById('parcelas').value);
+
+            const valorParcela = valor / parcelas;
+
+            document.getElementById('resultado').innerText =
+                `Valor de cada parcela: R$ ${valorParcela.toFixed(2)}`;
+        });
+    </script>
 </body>
 </html>
